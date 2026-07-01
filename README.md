@@ -58,3 +58,50 @@ npm run dev
 Local: http://localhost:5173
 
 
+# Recommended Folder Structure
+```
+src/
+│
+├── assets/
+│
+├── components/
+│   ├── Navbar.jsx
+│   ├── Footer.jsx
+│   ├── Button.jsx
+│
+├── pages/
+│   ├── Home.jsx
+│   ├── About.jsx
+│   ├── Contact.jsx
+│
+├── layouts/
+│   └── MainLayout.jsx
+│
+├── hooks/
+│
+├── context/
+│
+├── services/
+│
+├── utils/
+│
+├── App.jsx
+├── main.jsx
+└── index.css
+
+```
+
+## Install Common Packages
+For most React projects, you'll often add:
+<b>React Router</b> 
+
+```
+npm install react-router-dom
+npm install axios
+npm install react-icons
+npm install framer-motion
+npm install react-hook-form
+npm install react-hot-toast
+npm install @tanstack/react-query
+
+```
