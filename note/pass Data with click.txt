@@ -1,0 +1,39 @@
+10. Pass Data with Click
+
+অনেক সময় Button-এ Click করলে Parent-এর Function-এ একটি Value পাঠাতে চাই।
+
+
+app.jsx file e ===>
+
+import Button from "./components/Button";
+
+function App() {
+
+  function showName(name) {
+    alert(name);
+  }
+
+  return (
+    <>
+      <Button showName={showName} />
+    </>
+  );
+}
+
+export default App;
+
+
+
+
+Button.jsx file e ==>
+function Button({ showName }) {
+  return (
+    <button
+      onClick={() => showName("Imam")}
+    >
+      Click
+    </button>
+  );
+}
+
+export default Button;

@@ -2,17 +2,16 @@
 import Button from './components/Button';
 
 const App = () => {
-
-  function showMessage() {
-   alert("Hello Guys! ")
- }
+  
+  function showName(Name) {
+    alert(Name);
+  }
 
   return (
     <div>
       <h1>Hello this is from frontend app </h1>
-      
-      <Button click={showMessage} />
-      
+
+      <Button showName={showName} />
     </div>
   );
 };

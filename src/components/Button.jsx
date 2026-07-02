@@ -1,10 +1,10 @@
 
-const Button = ({click}) => {
+const Button = ({ showName }) => {
   return (
     <div>
-      <button onClick={click}>Click Me</button>
+      <button onClick={() => showName('Imam')}>Click</button>
     </div>
   );
-}
+};
 
 export default Button

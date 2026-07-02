@@ -1,0 +1,477 @@
+আজ আমরা শিখবো—
+
+✅ Default Props
+✅ Pass JSX with Props (children)
+✅ Change Style with Props
+
+
+
+# ১. Default Props
+
+ধরো `Header` Component-এ Name পাঠানো হলো না।
+
+### App.jsx
+
+```jsx
+import Header from "./Header";
+
+function App() {
+  return (
+    <>
+      <Header />
+    </>
+  );
+}
+
+export default App;
+```
+
+---
+
+### Header.jsx
+
+```jsx
+function Header({ name = "Guest" }) {
+  return <h1>Hello {name}</h1>;
+}
+
+export default Header;
+```
+
+Output
+
+```
+Hello Guest
+```
+
+---
+
+এখন যদি Name পাঠাও
+
+### App.jsx
+
+```jsx
+<Header name="Imam" />
+```
+
+Output
+
+```
+Hello Imam
+```
+
+---
+
+## কী হলো?
+
+যদি `name` না পাওয়া যায়,
+
+```jsx
+name = "Guest"
+```
+
+ব্যবহার হবে।
+
+যদি পাওয়া যায়,
+
+```jsx
+name = "Imam"
+```
+
+ব্যবহার হবে।
+
+---
+
+## আরও Example
+
+```jsx
+function User({
+  name = "Unknown",
+  age = 0,
+  city = "Chattogram"
+}) {
+  return (
+    <>
+      <h2>{name}</h2>
+      <p>{age}</p>
+      <p>{city}</p>
+    </>
+  );
+}
+```
+
+---
+
+# ২. Pass JSX with Props (children)
+
+React-এর সবচেয়ে সুন্দর Feature।
+
+ধরো তুমি Card Component বানাতে চাও।
+
+---
+
+### Card.jsx
+
+```jsx
+function Card({ children }) {
+  return (
+    <div
+      style={{
+        border: "1px solid black",
+        padding: "20px",
+        margin: "10px"
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
+export default Card;
+```
+
+---
+
+### App.jsx
+
+```jsx
+<Card>
+  <h2>React</h2>
+  <p>This is React Course.</p>
+</Card>
+```
+
+Output
+
+```
+--------------------
+React
+
+This is React Course.
+--------------------
+```
+
+---
+
+## এখানে কী হলো?
+
+তুমি লিখেছো
+
+```jsx
+<Card>
+
+   <h2>React</h2>
+
+   <p>This is React Course.</p>
+
+</Card>
+```
+
+React ভিতরে এটাকে এমনভাবে পাঠায়
+
+```jsx
+<Card
+   children={
+      <>
+         <h2>React</h2>
+         <p>This is React Course.</p>
+      </>
+   }
+/>
+```
+
+অর্থাৎ
+
+```jsx
+children
+```
+
+হলো `<Card></Card>` এর মাঝে যা কিছু লেখা আছে।
+
+---
+
+## আরও Example
+
+```jsx
+<Card>
+
+<button>
+Login
+</button>
+
+</Card>
+```
+
+Output
+
+```
+----------------
+[ Login ]
+----------------
+```
+
+---
+
+## আরও Example
+
+```jsx
+<Card>
+
+<img src="..." />
+
+<h2>Product</h2>
+
+<button>Buy</button>
+
+</Card>
+```
+
+সবকিছু `children` হয়ে Card Component-এর ভিতরে চলে যাবে।
+
+---
+
+## Flow
+
+```
+App
+
+<Card>
+
+<h1>Hello</h1>
+
+<p>React</p>
+
+</Card>
+
+      │
+
+      ▼
+
+children
+
+      │
+
+      ▼
+
+Card Component
+
+{children}
+```
+
+---
+
+# ৩. Change Style with Props
+
+Props দিয়ে Style-ও পরিবর্তন করা যায়।
+
+---
+
+### Button.jsx
+
+```jsx
+function Button({ color }) {
+  return (
+    <button
+      style={{
+        backgroundColor: color,
+        color: "white"
+      }}
+    >
+      Click
+    </button>
+  );
+}
+
+export default Button;
+```
+
+---
+
+### App.jsx
+
+```jsx
+<Button color="red" />
+
+<Button color="green" />
+
+<Button color="blue" />
+```
+
+Output
+
+```
+🔴 Click
+
+🟢 Click
+
+🔵 Click
+```
+
+একই Component, শুধু Props বদলেছে।
+
+---
+
+# আরও ভালো Example
+
+```jsx
+function Button({
+    bgColor,
+    textColor
+}) {
+
+return(
+
+<button
+
+style={{
+
+backgroundColor:bgColor,
+
+color:textColor
+
+}}
+
+>
+
+Click
+
+</button>
+
+)
+
+}
+```
+
+---
+
+App.jsx
+
+```jsx
+<Button
+bgColor="red"
+textColor="white"
+/>
+
+<Button
+bgColor="green"
+textColor="yellow"
+/>
+```
+
+---
+
+# আরও Professional Example
+
+```jsx
+function Button({
+  bgColor = "blue",
+  textColor = "white"
+}) {
+  return (
+    <button
+      style={{
+        backgroundColor: bgColor,
+        color: textColor,
+        padding: "10px"
+      }}
+    >
+      Click
+    </button>
+  );
+}
+```
+
+এখন
+
+```jsx
+<Button />
+```
+
+Output
+
+Blue Button
+
+---
+
+```jsx
+<Button bgColor="red"/>
+```
+
+Output
+
+Red Button
+
+---
+
+# Style Object Variable
+
+```jsx
+const style = {
+
+backgroundColor:"black",
+
+color:"white",
+
+padding:"20px"
+
+}
+
+return(
+
+<button style={style}>
+Click
+</button>
+
+)
+```
+
+এটাও খুব Common।
+
+---
+
+# Real Project Example
+
+```jsx
+function Product({
+  title,
+  price,
+  bgColor = "white"
+}) {
+
+  return (
+    <div
+      style={{
+        backgroundColor: bgColor,
+        padding: "20px",
+        margin: "20px"
+      }}
+    >
+      <h2>{title}</h2>
+
+      <h3>${price}</h3>
+    </div>
+  );
+}
+```
+
+---
+
+App.jsx
+
+```jsx
+<Product
+title="Laptop"
+price={800}
+bgColor="lightblue"
+/>
+
+<Product
+title="Phone"
+price={500}
+bgColor="lightgreen"
+/>
+```
+
+প্রতিটি Product Card-এর Background আলাদা হবে, কিন্তু Component একই থাকবে।
+
+---
