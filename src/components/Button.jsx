@@ -1,10 +1,14 @@
-
-const Button = ({ showName }) => {
+function Button({ color }) {
   return (
-    <div>
-      <button onClick={() => showName('Imam')}>Click</button>
-    </div>
+    <button
+      style={{
+        backgroundColor: color,
+        color: 'white',
+      }}
+    >
+      Click
+    </button>
   );
-};
+}
 
-export default Button
+export default Button;
