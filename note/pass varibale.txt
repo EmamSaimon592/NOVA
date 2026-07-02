@@ -1,3 +1,5 @@
+app.jsx file: 
+
 import Header from './components/Header';
 import Multiple from './components/Multiple';
 
@@ -21,3 +23,22 @@ const App = () => {
 };
 
 export default App;
+
+
+
+Multiple.jsx
+// this is the example of Pass Multiple Variables
+
+const Multiple = ({name , age , city}) => {
+  return (
+    <>
+      <h2>{name}</h2>
+      <p>{age}</p>
+      <p>{city}</p>
+    </>
+  );
+}
+
+export default Multiple;
+
+

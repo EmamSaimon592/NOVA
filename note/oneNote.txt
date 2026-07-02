@@ -1,0 +1,24 @@
+আজ আমরা শিখবো:
+
+✅ What is Props?
+✅ Create Components
+✅ Pass Variable
+✅ Pass Object
+✅ Pass Array
+✅ Receive & Display Data
+✅ Pass Function (Click Event)
+
+What is Props?
+Props = Properties
+Props হলো Parent Component থেকে Child Component-এ Data পাঠানোর একটি উপায়।
+বাস্তব উদাহরণ:
+ধরো তোমার বাবা তোমাকে একটি ব্যাগ দিলেন।
+এখানে
+
+Father = Parent Component
+
+Son = Child Component
+
+Bag = Props
+
+অর্থাৎ Data সবসময় Parent → Child যায়।
