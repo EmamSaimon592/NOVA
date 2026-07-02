@@ -60,3 +60,62 @@ const App = () => {
 };
 
 export default App;
+
+
+
+
+
+
+//  Pass Array of Objects
+
+app.jsx =>
+const students = [
+
+{
+    id:1,
+    name:"Imam"
+},
+
+{
+    id:2,
+    name:"Rahim"
+},
+
+{
+    id:3,
+    name:"Karim"
+}
+
+];
+
+<User students={students}/>
+
+
+user.jsx ==>
+function User({students}){
+
+return(
+
+<>
+
+{
+
+students.map((student)=>(
+
+<div key={student.id}>
+
+<h2>{student.name}</h2>
+
+</div>
+
+))
+
+}
+
+</>
+
+)
+
+}
+
+export default User;

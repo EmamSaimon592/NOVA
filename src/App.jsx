@@ -1,19 +1,17 @@
-import Header from './components/Header';
-import Multiple from './components/Multiple';
-import User from './components/User';
+// Pass function with click
+import Button from './components/Button';
 
 const App = () => {
 
-  const skills = ['React', 'Node', 'MongoDB', 'Docker'];
-
+  function showMessage() {
+   alert("Hello Guys! ")
+ }
 
   return (
     <div>
       <h1>Hello this is from frontend app </h1>
-      <Header name="Imam Hossain " />
-      <Multiple name="Imam" age={23} city="Chattogram" />
-
-      <User skills={ skills} />
+      
+      <Button click={showMessage} />
       
     </div>
   );
