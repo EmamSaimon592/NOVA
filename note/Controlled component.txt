@@ -29,5 +29,38 @@ Input-এর Value React-এর State-এ থাকবে।
 
 এটাকেই বলে
 
-Controlled Component
+Controlled Component. মানে
 
+State হচ্ছে আসল Data।
+
+Input শুধু সেটা দেখায়।
+
+
+
+
+2. Why Controlled Component?
+
+কারণ React সব Data জানে।
+
+তুমি Validation করতে পারো।
+
+Submit করতে পারো।
+
+Reset করতে পারো।
+
+API-তে পাঠাতে পারো।
+
+
+
+3. Uncontrolled Component
+<input type="text" />
+
+এখানে
+
+কোন State নেই।
+
+কোন Value নেই।
+
+React Control করছে না।
+
+এটা Uncontrolled Component।
