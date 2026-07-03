@@ -13,6 +13,8 @@ const App = () => {
       <Button color="green" />
 
       <Button color="blue" />
+
+      <input type="text" onChange={(event)=>alert(event.target.value)} placeholder="Enter user name" />
       
     </div>
   );

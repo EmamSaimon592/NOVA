@@ -1,0 +1,33 @@
+আজ আমরা শিখবো—
+
+✅ What is Controlled Component?
+✅ How to Identify Controlled Component?
+✅ Error যদি Controlled না করি?
+✅ Get Input Field Values
+✅ Display Input Values
+
+
+React কী চায়?
+
+React চায়,
+
+Input-এর Value React-এর State-এ থাকবে।
+
+  User
+
+   ↓
+
+  Input
+
+   ↓
+
+ React State
+
+   ↓
+
+  React UI
+
+এটাকেই বলে
+
+Controlled Component
+
